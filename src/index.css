@@ -1,0 +1,190 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600&display=swap');
+
+@layer base {
+  :root {
+    /* =======================
+       CORE COLORS
+    ======================= */
+    --background: 220 40% 98%;           /* soft white-blue */
+    --foreground: 224 30% 12%;           /* deep navy text */
+
+    --card: 0 0% 100%;
+    --card-foreground: 224 30% 12%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 224 30% 12%;
+
+    /* =======================
+       BRAND COLORS
+    ======================= */
+    --primary: 235 85% 60%;               /* royal blue */
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 250 30% 96%;             /* very light purple */
+    --secondary-foreground: 235 40% 20%;
+
+    --accent: 270 85% 65%;                /* professional purple */
+    --accent-foreground: 0 0% 100%;
+
+    /* =======================
+       STATUS COLORS
+    ======================= */
+    --success: 150 70% 45%;
+    --success-foreground: 0 0% 100%;
+
+    --warning: 38 90% 55%;
+    --warning-foreground: 224 30% 12%;
+
+    --destructive: 0 75% 55%;
+    --destructive-foreground: 0 0% 100%;
+
+    --critical: 0 75% 55%;
+    --critical-foreground: 0 0% 100%;
+
+    /* =======================
+       UI ELEMENTS
+    ======================= */
+    --muted: 220 25% 94%;
+    --muted-foreground: 224 15% 45%;
+
+    --border: 220 20% 90%;
+    --input: 220 20% 90%;
+    --ring: 235 85% 60%;
+
+    --radius: 0.9rem;
+
+    /* =======================
+       SIDEBAR
+    ======================= */
+    --sidebar-background: 235 60% 15%;
+    --sidebar-foreground: 220 40% 98%;
+    --sidebar-primary: 235 85% 60%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 250 40% 25%;
+    --sidebar-accent-foreground: 220 40% 98%;
+    --sidebar-border: 235 35% 22%;
+    --sidebar-ring: 235 85% 60%;
+
+    /* =======================
+       GRADIENTS (KEY UPGRADE)
+    ======================= */
+    --gradient-primary: linear-gradient(
+      135deg,
+      hsl(235, 85%, 60%) 0%,
+      hsl(270, 85%, 65%) 50%,
+      hsl(220, 40%, 98%) 100%
+    );
+
+    --gradient-soft: linear-gradient(
+      180deg,
+      hsl(220, 40%, 98%) 0%,
+      hsl(250, 30%, 96%) 100%
+    );
+
+    --gradient-card: linear-gradient(
+      145deg,
+      hsl(0, 0%, 100%) 0%,
+      hsl(220, 30%, 97%) 100%
+    );
+
+    --gradient-glow: radial-gradient(
+      circle at top,
+      hsla(235, 85%, 60%, 0.25),
+      transparent 70%
+    );
+
+    /* =======================
+       SHADOWS (PRO LOOK)
+    ======================= */
+    --shadow-card: 0 8px 24px rgba(30, 41, 59, 0.08);
+    --shadow-elevated: 0 16px 40px rgba(30, 41, 59, 0.12);
+    --shadow-glow: 0 0 40px rgba(99, 102, 241, 0.35);
+  }
+
+  /* Optional dark mode (still professional) */
+  .dark {
+    --background: 224 35% 10%;
+    --foreground: 220 40% 98%;
+    --card: 224 30% 14%;
+    --card-foreground: 220 40% 98%;
+    --border: 224 25% 22%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-sans antialiased;
+    font-family: 'Inter', sans-serif;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-semibold tracking-tight;
+  }
+
+  code, pre {
+    font-family: 'JetBrains Mono', monospace;
+  }
+}
+
+@layer utilities {
+  /* =======================
+     TEXT & BACKGROUNDS
+  ======================= */
+  .text-gradient {
+    @apply bg-clip-text text-transparent;
+    background-image: var(--gradient-primary);
+  }
+
+  .bg-gradient-primary {
+    background-image: var(--gradient-primary);
+  }
+
+  .bg-gradient-soft {
+    background-image: var(--gradient-soft);
+  }
+
+  .bg-gradient-card {
+    background-image: var(--gradient-card);
+  }
+
+  /* =======================
+     SHADOWS
+  ======================= */
+  .shadow-card {
+    box-shadow: var(--shadow-card);
+  }
+
+  .shadow-elevated {
+    box-shadow: var(--shadow-elevated);
+  }
+
+  .shadow-glow {
+    box-shadow: var(--shadow-glow);
+  }
+
+  /* =======================
+     GLASS EFFECT (SUBTLE)
+  ======================= */
+  .glass {
+    @apply backdrop-blur-xl bg-white/70 border border-white/40;
+  }
+
+  .glass-strong {
+    @apply backdrop-blur-2xl bg-white/85 border border-white/60;
+  }
+
+  /* =======================
+     ANIMATIONS
+  ======================= */
+  .animate-pulse-slow {
+    animation: pulse 3s ease-in-out infinite;
+  }
+}

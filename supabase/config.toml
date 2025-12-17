@@ -1,0 +1,4 @@
+project_id = "srtxymdnodieiklfdiza"
+
+[functions.analyze-road]
+verify_jwt = false
