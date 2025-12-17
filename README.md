@@ -1,5 +1,3 @@
-Below is a **professional, detailed, submission-ready README.md** you can directly paste into your GitHub repository.
-It’s written to look **serious, technical, and impressive** for **college projects, SIH, internships, or recruiters**.
 
 ---
 
